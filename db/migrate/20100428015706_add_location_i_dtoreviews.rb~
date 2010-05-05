@@ -1,0 +1,9 @@
+class AddLocationIDtoreviews < ActiveRecord::Migration
+  def self.up
+  add_column :reviews
+  
+  end
+
+  def self.down
+  end
+end

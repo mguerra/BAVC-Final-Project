@@ -1,0 +1,40 @@
+<h1>New review</h1>
+
+<% form_for(@review) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+      <%= f.label :location %><br /> 
+      <%= f.select "location_id" , Location.all.collect {|p| [p.name, p.id] }%>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :rating %><br />
+    <%= f.select :rating, %w[1 2 3 4 5], :selected => @review.rating.to_s %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  
+  <p>
+    <%= f.label :happy %><br />
+    <%= f.check_box :happy %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Create', :confirm => 'Are you sure?' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', reviews_path, :confirm => 'Are you sure?' %>

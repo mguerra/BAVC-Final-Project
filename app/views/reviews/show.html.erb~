@@ -1,0 +1,31 @@
+<h1> Your review is now posted! </h1>
+
+  <b>Title:</b>
+  <%=h @review.title %>
+
+ <%= link_to @review.location_name, @review.location unless @review.location.nil? %>
+
+
+<p>
+  <b>by:</b>
+  <%=h @review.author %>
+  <% if @review.happy == true %>
+	is happy!
+  <% else %>
+	is not happy
+  <% end %>
+</p>
+
+<p>
+  <%=h @review.body %>
+</p>
+
+<p>
+  <b>Your rating:</b>
+   <% @review.rating.times do %>
+        &#9728
+      <% end %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

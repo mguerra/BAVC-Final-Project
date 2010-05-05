@@ -1,0 +1,33 @@
+<h1>Monica's List</h1>
+
+<%= link_to 'Make a review!', new_review_path %>
+<hr/>
+<% @reviews.each do |review| %>
+<div>
+      <h3><%=h review.title %></h3>
+      <strong>author:</strong> <%=h review.author %><br />
+      <p><strong>your review:</strong><%=h review.body %></p>
+      <strong>rating:</strong> 
+      <% review.rating.times do %>
+        &#9728
+      <% end %>
+      <br />
+      <br />
+      Choose your action:
+    <ul>
+      
+    <strong>Location:</strong> 
+    <%= link_to review.location_name, review.location %>
+
+      <li><%= link_to 'Show', review %></li>
+      <li><%= link_to 'Edit', edit_review_path(review) %></li>
+      <li><%= link_to 'Destroy', review, :confirm => 'Are you sure?', :method => :delete %></li>
+    </ul>
+</div>
+<hr/>
+<% end %>
+
+
+
+
+
