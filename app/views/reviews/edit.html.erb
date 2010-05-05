@@ -11,6 +11,7 @@
   <p>
       <%= f.label :location %><br /> 
       <%= f.select "location_id" , Location.all.collect {|p| [p.name, p.id] }%>
+      <%= fields_for_new_location %>    
   </p>
 
   <p>

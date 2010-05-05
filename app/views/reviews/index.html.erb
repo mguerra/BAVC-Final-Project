@@ -19,6 +19,11 @@
     <strong>Location:</strong> 
     <%= link_to review.location_name, review.location %>
 
+
+  <b> Google Maps:</b><br/ >
+  <%= google_map (review.location.address) %>
+  <ul>
+
       <li><%= link_to 'Show', review %></li>
       <li><%= link_to 'Edit', edit_review_path(review) %></li>
       <li><%= link_to 'Destroy', review, :confirm => 'Are you sure?', :method => :delete %></li>

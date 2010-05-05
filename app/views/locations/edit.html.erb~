@@ -2,7 +2,7 @@
 
 <% form_for(@location) do |f| %>
   <%= f.error_messages %>
-  
+
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -10,7 +10,7 @@
   <p>
     <%= f.label :address %><br />
     <%= f.text_field :address %>
-    
+    <%= fields_for_new_location %>
   </p>
   <p>
     <%= f.submit 'Update' %>
